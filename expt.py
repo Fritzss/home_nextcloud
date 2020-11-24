@@ -6,8 +6,8 @@ from glob import glob
 
 def sendTG(bot_message):
 
-   bot_token = '1465751773:AAFjgWJTb46Z8swVDJDwMjMSd7GfkUlc3ec'
-   bot_chatID = '265801421'
+   bot_token = '<your_bot_token_TG>'
+   bot_chatID = '<your_chatID>'
    send_text =  f'https://api.telegram.org/bot{bot_token}/sendMessage?chat_id={bot_chatID}&parse_mode=Markdown&text={bot_message}'
    response = get(send_text)
    return response.json()
@@ -41,7 +41,7 @@ def ch(f):
 
 
 if ping_ip('api.telegram.org'):
-        folder = '/var/opt/*txt'
+        folder = '<your_path_logs>'
         F = glob(folder)
         for f in F:
              if len(f)>0:
