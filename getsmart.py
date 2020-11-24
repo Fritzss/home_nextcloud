@@ -13,8 +13,8 @@ disks = loads(disksraw.stdout)
 
 def sendTG(bot_message):
 
-   bot_token = '1465751773:AAFjgWJTb46Z8swVDJDwMjMSd7GfkUlc3ec'
-   bot_chatID = '265801421'
+   bot_token = '<your_bot_token_TG>'
+   bot_chatID = '<your_chatID>'
    send_text = f'https://api.telegram.org/bot{bot_token}/sendMessage?chat_id={bot_chatID}&parse_mode=Markdown&text={bot_message}'
 
    response = get(send_text)
@@ -63,7 +63,7 @@ for i in disks['devices']:
                                try:
                                     res = sendTG(f"fail {i['name']}")
                                except:
-                                    fsm = open('/var/opt/smart.txt', 'wa')
+                                    fsm = open('<your_path_logs>', 'a')
                                     fsm.write(f"fail {i['name']}\n")
                                     fsm.close
 
@@ -73,7 +73,7 @@ try:
        try:
           res =  sendTG(f'space used {getfree()}%')
        except:
-          ffr = open('/var/opt/freehdd.txt', 'a')
+          ffr = open('<your_path_logs>', 'a')
           ffr.write(f'space used {getfree()}%\n')
           ffr.close
 except:
@@ -81,13 +81,12 @@ except:
 
 
 raidst = getmdadm()
-print(len(raidst.split(',')))
-#if 'degraded' in raidst or 'resyncing' in raidst:
+
 if (len(raidst.split(','))) > 1:
              try:
                   res = sendTG(f'RAID {raidst}')
              except:
-                  fmd = open('/var/opt/mdadm.txt', 'a')
+                  fmd = open('<your_path_logs>', 'a')
                   fmd.write(f'RAID {raidst}\n') 
                   fmd.close
 
@@ -96,7 +95,7 @@ if TCPU > 70:
             try:
                     res = sendTG(f'Temperatura  {TCPU()}')
             except:
-                    ftc = open('/var/opt/TCPU.txt', 'a')
+                    ftc = open('<your_path_logs>', 'a')
                     ftc.write(f'Temperatura {TCPU}\n')
                     ftc.close
 
