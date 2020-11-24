@@ -23,9 +23,9 @@ $CONFIG = array (
       'writable' => true,
     ),
   ),
-  'instanceid' => 'ocxlit4gzeyt',
-  'passwordsalt' => 'AcNx7OZAbn05JfB9jgiTOui6Jjq7f2',
-  'secret' => 'xujmCf6shneERA6glF24zL5Es6WFnEBv8sOt/iX4+v+iJeF+',
+  'instanceid' => '',
+  'passwordsalt' => '',
+  'secret' => '',
   'trusted_domains' => 
   array (
     0 => <your_trust_domen>,
@@ -39,8 +39,8 @@ $CONFIG = array (
   'dbport' => '',
   'dbtableprefix' => 'oc_',
   'mysql.utf8mb4' => true,
-  'dbuser' => 'nextcloud',
-  'dbpassword' => 'nextcloud',
+  'dbuser' => '<login>',
+  'dbpassword' => '<password>',
   'installed' => true,
   'loglevel' => 0,
   'maintenance' => false,
