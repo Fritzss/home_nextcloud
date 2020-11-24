@@ -5,7 +5,7 @@ testTG - testing your TG bot
 
 getsmart - monitor hdd and send alarm in TG
 
-expt - send alarm if TG bot was not ready
+expt - send alarm if TG bot was not ready, when will it be available.
 
 allow big upload file:
 
