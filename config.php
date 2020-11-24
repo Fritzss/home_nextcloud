@@ -28,12 +28,7 @@ $CONFIG = array (
   'secret' => 'xujmCf6shneERA6glF24zL5Es6WFnEBv8sOt/iX4+v+iJeF+',
   'trusted_domains' => 
   array (
-    0 => '192.168.0.26',
-    1 => 'cloud.fazenda',
-    2 => 'nc.fazenda',
-    3 => 'next.fazenda',
-    4 => 'nextcloud.fazenda',
-    5 => '172.19.0.4',
+    0 => <your_trust_domen>,
   ),
   'datadirectory' => '/var/www/html/data',
   'dbtype' => 'mysql',
