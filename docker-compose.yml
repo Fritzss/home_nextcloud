@@ -3,11 +3,10 @@ services:
     nginx:
        image : nginx:stable
        networks:
-           - def_network
+         - def_network
        restart: always
        volumes:
-           - /etc/nginx/conf.d:/etc/nginx/conf.d:ro
-           - /var/ssl:/var/ssl/:ro 
+           - <your_path>:/etc/nginx/conf.d:ro
        ports:
            - 80:80
        depends_on:
@@ -22,16 +21,16 @@ services:
     db:
        image: mariadb
        networks:
-           - def_network
+         - def_network
        command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
        restart: always
        volumes:
-           - /var/next/mysql:/var/lib/mysql
+           - <your_path>:/var/lib/mysql
        environment:
-          - MYSQL_ROOT_PASSWORD=nextcloud
-          - MYSQL_PASSWORD=nextcloud
-          - MYSQL_DATABASE=nextcloud
-          - MYSQL_USER=nextcloud
+          - MYSQL_ROOT_PASSWORD=<your_password>
+          - MYSQL_PASSWORD=<your_password>
+          - MYSQL_DATABASE=<your_password>
+          - MYSQL_USER=<your_password>
        deploy:
            resources:
                limits:
@@ -41,30 +40,30 @@ services:
     redis:
         image: redis:alpine
         networks:
-           - def_network
+            - def_network
         ports:
            - 6379:6379
         restart: always
         volumes:
-            - /var/next/redis/data:/data
-            - /var/next/redis/etc/:/usr/local/etc/redis/
+            - <your_path>:/data
+            - <your_path>:/usr/local/etc/redis/
         deploy:
             resources:
                 limits:
-                    memory: 512M
+                    memory: 128M
 
 
     app:
       image: nextcloud
       networks:
-          - def_network
+         - def_network 
       links:
           - db
           - redis
       volumes:
-          - /var/next/custom_apps:/var/www/html/custom_apps
-          - /var/next/data:/var/www/html/data
-          - /var/next/html:/var/www/html/
+          - <your_path>:/var/www/html/custom_apps
+          - <your_path>:/var/www/html/data
+          - <your_path>:/var/www/html/
       restart: always
       deploy:
           resources:
