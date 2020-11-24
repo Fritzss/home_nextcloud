@@ -28,7 +28,7 @@ def getfree():
 
 def getmdadm():
           status = ''
-          statusraw = run(['/usr/sbin/mdadm', '-D', '/dev/md/ha:0'], stdout = PIPE, encoding='utf-8')
+          statusraw = run(['/usr/sbin/mdadm', '-D', '<parh_your_raid>'], stdout = PIPE, encoding='utf-8')
           for i in str(statusraw.stdout).split('\n'):
                  if 'State' in i and not 'Number' in i:
                         status = i
