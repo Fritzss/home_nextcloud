@@ -12,7 +12,7 @@ def sendTG(bot_message,log):
    log = log
    bot_token = '<your_bot_token>'
    bot_chatID = '<your_chatID>'
-   send_text = f'https://123api.telegram.org/bot{bot_token}/sendMessage?chat_id={bot_chatID}&parse_mode=Markdown&text={bot_message}'
+   send_text = f'https://api.telegram.org/bot{bot_token}/sendMessage?chat_id={bot_chatID}&parse_mode=Markdown&text={bot_message}'
    try:
        response = get(send_text).json()
    except:
