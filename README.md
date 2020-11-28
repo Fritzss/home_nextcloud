@@ -27,8 +27,8 @@ CRONTAB
 
 */5 * * * * /usr/bin/docker exec -u www-data $(docker ps -f ancestor=nextcloud -q) php cron.php #Use system cron service to call the cron.php file every 5 minutes. 
 
-0 9-21 * * * /var/opt/getsmart.py # monitor hdd 
+0 9-21 * * * <your_path>/monit.py # monitor state
 
-*/20 9-21 * * * /var/opt/expt.py # double monitor hdd
+*/20 9-21 * * * <your_path>/expt.py # double monitor state
 
 
