@@ -14,9 +14,8 @@ def sendTG(bot_message,log):
    bot_chatID = '<your_chatID>'
    send_text = f'https://api.telegram.org/bot{bot_token}/sendMessage?chat_id={bot_chatID}&parse_mode=Markdown&text={bot_message}'
    try:
-       response = get(send_text).json()
+       get(send_text).json()
    except:
-       response = get(send_text)
        fmd = open(log, 'a')
        fmd.write(f'{bot_message}\n')
        fmd.close
