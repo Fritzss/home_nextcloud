@@ -91,7 +91,7 @@ def gettcpu():
                                                T.append(tcpu['coretemp-isa-0000'][core][t])
                      try:
                           avgT = sum(T)/len(T)
-                     except Exception:
+                     except:
                               pass
 
           if avgT > 70:
