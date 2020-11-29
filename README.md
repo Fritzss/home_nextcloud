@@ -3,7 +3,7 @@ docker-compose nextcloud
 
 testTG - testing your TG bot
 
-monit.py - monitor hdd and send alarm in TG
+monit.py - monitor hdd and send alarm in TG (RAID mdadm, required smartmontools)
 
 expt.py - send alarm if TG bot was not ready, when will it be available.
 
