@@ -17,11 +17,9 @@ def sendTG(bot_message,log):
        response = get(send_text).json()
    except:
        response = get(send_text)
-       print(response)
        fmd = open(log, 'a')
        fmd.write(f'{bot_message}\n')
        fmd.close
-
 
 
 def getstorage(ym):
