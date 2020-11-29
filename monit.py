@@ -72,7 +72,7 @@ def getsmart():
          for i in disks['devices']:
                diskhealth = run([check, '-j',i['name'], '-H'], stdout = PIPE)
                health = loads(diskhealth.stdout)
-               if (health['smart_status']['passed']):
+               if not (health['smart_status']['passed']):
                                sendTG(f"fail {i['name']}",log)
 
 
@@ -94,7 +94,7 @@ def gettcpu():
                      except Exception:
                               pass
 
-          if avgT < 70:
+          if avgT > 70:
                sendTG(f'T CPU {avgT}C',log)
 
 
